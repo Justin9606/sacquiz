@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StatusBar } from "react-native";
+import { ScrollView, StatusBar, View, Text } from "react-native";
 
 import spaceQuestions from "../data/space";
 import westernsQuestions from "../data/westerns";
@@ -10,36 +10,48 @@ import { RowItem } from "../components/RowItem";
 export default ({ navigation }) => (
   <ScrollView>
     <StatusBar barStyle="dark-content" />
+    <View
+      style={{
+        marginTop: 50,
+        justifyContent: "center",
+        alignItems: "center",
+        borderWidth: 1,
+        marginHorizontal: 50,
+        height: 200,
+      }}
+    >
+      <Text>LOGO</Text>
+    </View>
     <RowItem
-      name="Space"
+      name="Easy"
       color="#36b1f0"
       onPress={() =>
         navigation.navigate("Quiz", {
-          title: "Space",
+          title: "Easy",
           questions: spaceQuestions,
-          color: "#36b1f0"
+          color: "#36b1f0",
         })
       }
     />
     <RowItem
-      name="Westerns"
+      name="Normal"
       color="#799496"
       onPress={() =>
         navigation.navigate("Quiz", {
-          title: "Westerns",
+          title: "Normal",
           questions: westernsQuestions,
-          color: "#799496"
+          color: "#799496",
         })
       }
     />
     <RowItem
-      name="Computers"
+      name="Hard"
       color="#49475B"
       onPress={() =>
         navigation.navigate("Quiz", {
-          title: "Computers",
+          title: "Hard",
           questions: computerQuestions,
-          color: "#49475B"
+          color: "#49475B",
         })
       }
     />
